@@ -93,7 +93,7 @@
                   </div>
                   {% if project.technologies %}
                   <div class="flex gap-2 flex-wrap">
-                    {% for tech in project.technologies.split(',') %}
+                    {% for tech in project.technologies_list %}
                     <span class="text-white text-xs font-medium leading-normal bg-[#243647] rounded-full px-3 py-1">{{ tech|strip }}</span>
                     {% endfor %}
                   </div>
