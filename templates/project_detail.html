@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="relative flex size-full min-h-screen flex-col bg-[#111a22] dark group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+  <div class="layout-container flex h-full grow flex-col">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#243647] px-10 py-3">
+      <div class="flex items-center gap-4 text-white">
+        <div class="size-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_6_330)">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
+                fill="currentColor"
+              ></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Danko Portfolio</h2>
+      </div>
+      <div class="flex flex-1 justify-end gap-8">
+        <div class="flex items-center gap-9">
+          <a class="text-white text-sm font-medium leading-normal hover:text-[#197fe5]" href="{% url 'home' %}">← Volver al Portfolio</a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="px-10 lg:px-40 flex flex-1 justify-center py-8">
+      <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        
+        <!-- Título y badges -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
+          <div class="flex items-center gap-3">
+            <h1 class="text-white text-3xl lg:text-4xl font-black leading-tight tracking-[-0.033em]">
+              {{ project.name }}
+            </h1>
+            {% if project.featured %}
+            <span class="bg-[#197fe5] text-white text-xs font-semibold px-3 py-1 rounded-full">Destacado</span>
+            {% endif %}
+          </div>
+          
+          <!-- Botones de acción -->
+          <div class="flex gap-3">
+            {% if project.github_link %}
+            <a href="{{ project.github_link }}" target="_blank" class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#243647] hover:bg-[#2d3748] text-white gap-2 text-sm font-medium leading-normal transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            {% endif %}
+            {% if project.demo_link %}
+            <a href="{{ project.demo_link }}" target="_blank" class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#197fe5] hover:bg-[#1565c0] text-white text-sm font-bold leading-normal tracking-[0.015em] transition-all duration-200">
+              <span>Ver Demo en Vivo</span>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Imagen principal del proyecto -->
+        {% if project.image %}
+        <div class="mb-8">
+          <div class="w-full h-64 lg:h-96 bg-center bg-no-repeat bg-cover rounded-xl border border-[#243647] shadow-lg" style='background-image: url("{{ project.image.url }}");'></div>
+        </div>
+        {% endif %}
+
+        <!-- Descripción del proyecto -->
+        <div class="bg-[#1a2332] rounded-lg p-6 mb-8 border border-[#243647]">
+          <h2 class="text-white text-xl font-bold mb-4">Descripción del Proyecto</h2>
+          <p class="text-[#93adc8] text-base leading-relaxed">{{ project.description }}</p>
+        </div>
+
+        <!-- Logros específicos -->
+        {% if project.achievements %}
+        <div class="bg-[#111a22] rounded-lg p-6 mb-8 border-l-4 border-[#197fe5]">
+          <h2 class="text-[#197fe5] text-xl font-bold mb-4">Logros Destacados</h2>
+          <ul class="text-white space-y-2">
+            {% for achievement in project.achievements_list %}
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#197fe5" viewBox="0 0 256 256" class="mt-1 flex-shrink-0">
+                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm49.52,85.76-58.6,56a8,8,0,0,1-11,0L83.48,141.76a8,8,0,0,1,11-11.52L116,151.43l52.52-50.19a8,8,0,0,1,11,11.52Z"></path>
+              </svg>
+              <span class="text-sm">{{ achievement }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <!-- Tecnologías utilizadas -->
+        {% if project.technologies %}
+        <div class="bg-[#1a2332] rounded-lg p-6 mb-8 border border-[#243647]">
+          <h2 class="text-white text-xl font-bold mb-4">Tecnologías Utilizadas</h2>
+          <div class="flex gap-3 flex-wrap">
+            {% for tech in project.technologies_list %}
+            <span class="text-white text-sm font-medium leading-normal bg-[#243647] hover:bg-[#197fe5] transition-colors duration-200 rounded-full px-4 py-2">{{ tech }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Galería de imágenes adicionales (placeholder para futuras imágenes) -->
+        <div class="bg-[#1a2332] rounded-lg p-6 mb-8 border border-[#243647]">
+          <h2 class="text-white text-xl font-bold mb-4">Galería del Proyecto</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% if project.image %}
+            <!-- Imagen principal duplicada como placeholder -->
+            <div class="bg-center bg-no-repeat bg-cover rounded-lg h-48 border border-[#243647] hover:border-[#197fe5] transition-all duration-300" style='background-image: url("{{ project.image.url }}");'></div>
+            <div class="bg-[#243647] rounded-lg h-48 border border-[#243647] hover:border-[#197fe5] transition-all duration-300 flex items-center justify-center">
+              <p class="text-[#93adc8] text-sm">Más capturas próximamente</p>
+            </div>
+            <div class="bg-[#243647] rounded-lg h-48 border border-[#243647] hover:border-[#197fe5] transition-all duration-300 flex items-center justify-center">
+              <p class="text-[#93adc8] text-sm">Más capturas próximamente</p>
+            </div>
+            {% else %}
+            <div class="bg-[#243647] rounded-lg h-48 border border-[#243647] flex items-center justify-center col-span-full">
+              <p class="text-[#93adc8] text-sm">Imágenes próximamente</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div class="bg-[#1a2332] rounded-lg p-6 border border-[#243647]">
+            <h3 class="text-white text-lg font-bold mb-3">Categoría</h3>
+            <span class="bg-[#197fe5] text-white text-xs font-semibold px-3 py-1 rounded-full">
+              {{ project.get_category_display }}
+            </span>
+          </div>
+          
+          <div class="bg-[#1a2332] rounded-lg p-6 border border-[#243647]">
+            <h3 class="text-white text-lg font-bold mb-3">Fecha de Creación</h3>
+            <p class="text-[#93adc8] text-sm">{{ project.created_date|date:"F Y" }}</p>
+          </div>
+        </div>
+
+        <!-- Navegación de vuelta -->
+        <div class="text-center">
+          <a href="{% url 'home' %}#proyectos" class="inline-flex items-center gap-2 text-[#197fe5] hover:text-white text-sm font-medium transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+            </svg>
+            Volver a todos los proyectos
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
