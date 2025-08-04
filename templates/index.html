@@ -250,7 +250,7 @@
                   </div>
                   {% if project.image %}
                   <div class="lg:w-80 w-full">
-                    <div class="w-full h-48 lg:h-full bg-center bg-no-repeat bg-cover rounded-lg border border-[#243647] hover:border-[#197fe5] transition-all duration-300" style='background-image: url("{{ project.image.url }}");'></div>
+                    <div class="w-full h-48 lg:h-full bg-center bg-no-repeat bg-cover rounded-lg border border-[#243647] hover:border-[#197fe5] transition-all duration-300" style='background-image: url("{% static project.image %}");'></div>
                   </div>
                   {% endif %}
                 </div>

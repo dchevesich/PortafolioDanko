@@ -13,7 +13,7 @@ class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     short_description = models.CharField(max_length=150, help_text="Descripción corta para preview", blank=True)
-    image = models.ImageField(upload_to='project_images/', blank=True, null=True)
+    image = models.CharField(max_length=255, blank=True, null=True, help_text="Path to static image (e.g., 'img/calculadora.PNG')")
     github_link = models.URLField(max_length=200, blank=True, null=True)
     demo_link = models.URLField(max_length=200, blank=True, null=True)
     technologies = models.CharField(max_length=200, help_text="Comma-separated list of technologies (e.g., Python, Django, PostgreSQL)")

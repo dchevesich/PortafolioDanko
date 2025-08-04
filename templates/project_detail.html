@@ -65,7 +65,7 @@
         <!-- Imagen principal del proyecto -->
         {% if project.image %}
         <div class="mb-8">
-          <div class="w-full h-64 lg:h-96 bg-center bg-no-repeat bg-cover rounded-xl border border-[#243647] shadow-lg" style='background-image: url("{{ project.image.url }}");'></div>
+          <div class="w-full h-64 lg:h-96 bg-center bg-no-repeat bg-cover rounded-xl border border-[#243647] shadow-lg" style='background-image: url("{% static project.image %}');'></div>
         </div>
         {% endif %}
 
@@ -110,7 +110,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {% if project.image %}
             <!-- Imagen principal duplicada como placeholder -->
-            <div class="bg-center bg-no-repeat bg-cover rounded-lg h-48 border border-[#243647] hover:border-[#197fe5] transition-all duration-300" style='background-image: url("{{ project.image.url }}");'></div>
+            <div class="bg-center bg-no-repeat bg-cover rounded-lg h-48 border border-[#243647] hover:border-[#197fe5] transition-all duration-300" style='background-image: url("{% static project.image %}');'></div>
             <div class="bg-[#243647] rounded-lg h-48 border border-[#243647] hover:border-[#197fe5] transition-all duration-300 flex items-center justify-center">
               <p class="text-[#93adc8] text-sm">Más capturas próximamente</p>
             </div>
