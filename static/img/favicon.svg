@@ -1,4 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="50" fill="#197fe5"/>
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="60" text-anchor="middle" dominant-baseline="central" fill="white">D</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <path fill="#197fe5" d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm40.34,135.66a8,8,0,0,1-11.32,11.32L128,139.31l-29.06,29.05a8,8,0,0,1-11.32-11.32L116.69,128,87.64,98.94a8,8,0,0,1,11.32-11.32L128,116.69l29.06-29.05a8,8,0,0,1,11.32,11.32L139.31,128Z"/>
 </svg>
