@@ -13,7 +13,7 @@
             </div>
             <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Portafolio de Danko</h2>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
+          <div class="hidden md:flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
               <a class="text-white text-sm font-medium leading-normal" href="#acerca">Acerca de</a>
               <a class="text-white text-sm font-medium leading-normal" href="#stack">Stack Tecnológico</a>
@@ -22,7 +22,21 @@
               <a class="text-white text-sm font-medium leading-normal" href="#contacto">Contacto</a>
             </div>
           </div>
+          <div class="md:hidden flex items-center">
+            <button id="menu-button" class="text-white focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
         </header>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#111a22]">
+            <a href="#acerca" class="block py-2 px-4 text-sm text-white">Acerca de</a>
+            <a href="#stack" class="block py-2 px-4 text-sm text-white">Stack Tecnológico</a>
+            <a href="#proyectos" class="block py-2 px-4 text-sm text-white">Proyectos</a>
+            <a href="#experiencia" class="block py-2 px-4 text-sm text-white">Experiencia</a>
+            <a href="#contacto" class="block py-2 px-4 text-sm text-white">Contacto</a>
+        </div>
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class=" @container">
@@ -295,4 +309,14 @@
         </div>
       </div>
     </div>
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 {% endblock %}
