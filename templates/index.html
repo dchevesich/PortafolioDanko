@@ -6,12 +6,10 @@
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#243647] px-10 py-3">
           <div class="flex items-center gap-4 text-white">
-            <div class="size-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M112,200a8,8,0,0,1-5.66-13.66L154.34,128,106.34,69.66a8,8,0,0,1,11.32-11.32l48,56a8,8,0,0,1,0,11.32l-48,56A8,8,0,0,1,112,200ZM144,56a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,144,56Z"></path>
-              </svg>
-            </div>
-            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Portafolio de Danko</h2>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex items-center gap-2">
+              <span class="inline-flex items-center justify-center text-[#197fe5] bg-[#1a2332] border border-[#243647] rounded-md px-2 py-0.5 text-sm">&lt;/&gt;</span>
+              Portafolio de Danko
+            </h2>
           </div>
           <div class="hidden md:flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
@@ -87,7 +85,7 @@
                   <path d="M128.004,237.375c36.362,0,34.084-15.77,34.084-15.77l-0.043-16.336h-34.73v-4.896h48.344c0,0,23.089,2.624,23.089-34.085c0-36.709-20.148-35.448-20.148-35.448h-12.02v16.899c0,0,0.648,20.148-19.836,20.148h-34.573c0,0-19.188-0.307-19.188,18.58v31.464C93.086,218.932,93.086,237.375,128.004,237.375z M144.005,226.334c-3.395,0-6.15-2.755-6.15-6.151c0-3.396,2.755-6.151,6.15-6.151c3.396,0,6.151,2.755,6.151,6.151C150.156,223.579,147.401,226.334,144.005,226.334z" fill="#FFD43B"/>
                 </svg>
                 <p class="text-white text-sm font-medium leading-normal">Python</p>
-                <span class="text-[#f4b942] text-xs font-semibold px-2 py-1 rounded-full bg-[#1a2332]">Medio</span>
+                <span class="text-[#f4b942] text-xs font-semibold px-2 py-1 rounded-full bg-[#3a1212]">Medio/Avanzado</span>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#243647] pl-4 pr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
@@ -102,7 +100,7 @@
                   <circle cx="184" cy="64" r="4" fill="white"/>
                 </svg>
                 <p class="text-white text-sm font-medium leading-normal">Django</p>
-                <span class="text-[#f4b942] text-xs font-semibold px-2 py-1 rounded-full bg-[#1a2332]">Medio</span>
+                <span class="text-[#f4b942] text-xs font-semibold px-2 py-1 rounded-full bg-[#3a1212]">Medio/Avanzado</span>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#243647] pl-4 pr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
@@ -168,6 +166,13 @@
                 </svg>
                 <p class="text-white text-sm font-medium leading-normal">JavaScript</p>
                 <span class="text-[#f4b942] text-xs font-semibold px-2 py-1 rounded-full bg-[#1a2332]">Medio</span>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg- pl-4 pr-4">
+              
+            
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg- pl-4 pr-4">
+                
               </div>
             </div>
             <h2 id="proyectos" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Proyectos Destacados</h2>
@@ -250,6 +255,8 @@
                         <span class="truncate">Ver Demo</span>
                       </a>
                       {% endif %}
+                      
+                      </a>
                     </div>
                   </div>
                   {% if project.image %}
@@ -271,7 +278,26 @@
                 <p class="text-[#93adc8] text-sm mb-2">S&A Chile</p>
                 <p class="text-white text-sm">Desarrollo de mentalidad de "seguridad por diseño" aplicable al desarrollo de software. Análisis y resolución de problemas bajo presión.</p>
               </div>
-              
+              <div class="bg-[#1a2332] rounded-lg p-4 border border-[#243647]">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-white text-lg font-semibold">Agente de Counter Delta Air Lines</h3>
+                  <span class="text-[#93adc8] text-sm">Marzo 2020 – Diciembre 2022</span>
+                </div>
+                <p class="text-[#93adc8] text-sm mb-2">Santiago, Chile</p>
+                <ul class="text-white text-sm space-y-1">
+                  <li>Atención al cliente en counter internacional, manejando check-in, cambios de vuelos y resolución de problemas.</li>
+                  <li>Comunicación fluida en inglés con pasajeros nativos de diferentes países (Estados Unidos, Canadá, Reino Unido).</li>
+                  <li>Resolución de situaciones complejas bajo presión, demostrando habilidades de comunicación intercultural.</li>
+                </ul>
+              </div>
+              <div class="bg-[#1a2332] rounded-lg p-4 border border-[#243647]">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-white text-lg font-semibold">Supervisor de Guardias</h3>
+                  <span class="text-[#93adc8] text-sm">Febrero 2018 – Marzo 2020</span>
+                </div>
+                <p class="text-[#93adc8] text-sm mb-2">Securitas Chile</p>
+                <p class="text-white text-sm">Liderazgo de equipos y resolución de conflictos en entornos de alta presión.</p>
+              </div>
               <div class="bg-[#1a2332] rounded-lg p-4 border border-[#243647]">
                 <div class="flex justify-between items-start mb-2">
                   <h3 class="text-white text-lg font-semibold">Analista Programador</h3>
