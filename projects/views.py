@@ -18,14 +18,14 @@ def home(request):
                 send_mail(
                     f'Mensaje de contacto de {name}',
                     f'De: {email}\n\nMensaje:\n{message}',
-                    settings.EMAIL_HOST_USER,  # Remitente
-                    [settings.EMAIL_RECEIVER],  # Destinatario
+                    settings.EMAIL_HOST_USER,  
+                    [settings.EMAIL_RECEIVER],  
                     fail_silently=False,
                 )
-                # Puedes añadir un mensaje de éxito aquí si lo deseas
-                return redirect('home') # Redirige para evitar reenvío del formulario
+                
+                return redirect('home') 
             except Exception as e:
-                # Puedes añadir un mensaje de error aquí si lo deseas
+                
                 print(f"Error al enviar correo: {e}")
     else:
         form = ContactForm()
